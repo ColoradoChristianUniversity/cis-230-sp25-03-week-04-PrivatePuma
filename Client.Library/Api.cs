@@ -11,10 +11,12 @@ public static class Api
 
     public static async Task<string[]> GetStringArrayAsync()
     {
+        // A one line solution to whats happening in the method below
         return await Http.GetFromJsonAsync<string[]>(StringArrayUrl) 
             ?? throw new Exception("Failed to deserialize string array.");
     }
 
+    // this is not intended to be used, more to see entire process of method above
     public static async Task<int[]> GetIntegerArrayAsync()
     {
         var response = await Http.GetAsync(IntegerArrayUrl);

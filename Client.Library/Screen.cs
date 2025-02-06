@@ -18,6 +18,7 @@ public static class Screen
 
     public static void Print(string text, int? x = null, int? y = null, ConsoleColor? foreground = null, ConsoleColor? background = null)
     {
+        // Throw error if incorrect screen values are passed
         ArgumentException.ThrowIfNullOrEmpty(text, nameof(text));
         ArgumentOutOfRangeException.ThrowIfLessThan(x ?? 0, 0, nameof(x));
         ArgumentOutOfRangeException.ThrowIfGreaterThan(x ?? 0, WindowWidth - text.Length - 2, nameof(x));
